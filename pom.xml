@@ -21,6 +21,8 @@
 	<description>Demo java rest calculator</description>
 	<properties>
 		<java.version>11</java.version>
+		<sonar.organization>cesarochoa2006</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>
