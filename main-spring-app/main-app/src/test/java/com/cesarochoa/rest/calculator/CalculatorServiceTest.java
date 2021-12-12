@@ -35,12 +35,12 @@ class CalculatorServiceTest {
 
     @BeforeEach
     void init() {
-        service =  new CalculatorService(context, sessionRepo);
+        service = new CalculatorService(context, sessionRepo);
     }
 
 
     @Test
-    void sumTest(){
+    void sumTest() {
         logger.info("Testing sum service...");
         Mockito.when(sessionRepo.findByToken("1")).thenReturn(Optional.of(
                 new SessionEntity(1L, "1", "")
@@ -54,7 +54,6 @@ class CalculatorServiceTest {
         Mockito.when(sessionRepo.findByToken("4")).thenReturn(Optional.of(
                 new SessionEntity(4L, "4", "-1;-5")
         ));
-        //CalculatorService service = new CalculatorService(context, sessionRepo);
         assertEquals(6, service.calculate("suma", "2"));
         assertEquals(1, service.calculate("suma", "3"));
         assertEquals(-6, service.calculate("suma", "4"));
@@ -63,7 +62,7 @@ class CalculatorServiceTest {
     }
 
     @Test
-    void subtractTest(){
+    void subtractTest() {
         logger.info("Testing subtract service...");
         Mockito.when(sessionRepo.findByToken("1")).thenReturn(Optional.of(
                 new SessionEntity(1L, "1", "")
@@ -85,7 +84,7 @@ class CalculatorServiceTest {
     }
 
     @Test
-    void multiplyTest(){
+    void multiplyTest() {
         logger.info("Testing multiply service...");
         Mockito.when(sessionRepo.findByToken("1")).thenReturn(Optional.of(
                 new SessionEntity(1L, "1", "")
@@ -107,7 +106,7 @@ class CalculatorServiceTest {
     }
 
     @Test
-    void divideTest(){
+    void divideTest() {
         logger.info("Testing divide service...");
         Mockito.when(sessionRepo.findByToken("1")).thenReturn(Optional.of(
                 new SessionEntity(1L, "1", "")
@@ -133,7 +132,7 @@ class CalculatorServiceTest {
     }
 
     @Test
-    void powTest(){
+    void powTest() {
         logger.info("Testing pow service...");
         Mockito.when(sessionRepo.findByToken("1")).thenReturn(Optional.of(
                 new SessionEntity(1L, "1", "")
