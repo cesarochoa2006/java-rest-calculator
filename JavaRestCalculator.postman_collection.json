@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "4aebf545-fe67-4df9-b3d2-8a9844ab39c0",
+		"name": "JavaRestCalculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/calculadora/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar operando (valido)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"datos\":\"100\",\n    \"token\":\"6456810029ab1e09cbce4b9c011fa16d26b71dc58bb4ec875984526e342d509c\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar operando (valido con varios)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"datos\":\"1;3;2;5;10\",\n    \"token\":\"6456810029ab1e09cbce4b9c011fa16d26b71dc58bb4ec875984526e342d509c\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar operando (error operando vacio)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"datos\":\"\",\n    \"token\":\"6992ed6d7a27c83aafaec68fab1853e30429c6b4d3082e1efa89dae478d38b7c\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar operando (error operando no valido)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"datos\":\"abc1\",\n    \"token\":\"6992ed6d7a27c83aafaec68fab1853e30429c6b4d3082e1efa89dae478d38b7c\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar operando (error token)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"datos\":\"1\",\n    \"token\":\"d3082e1efa89dae478d38b7c\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calcular suma",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operacion\":\"suma\",\n    \"token\":\"82a46fb46bd65cae8cf33dc74dff9ea5abe06d5e8177039b79e4590039fac17b\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/calcular",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"calcular"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calcular resta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operacion\":\"resta\",\n    \"token\":\"6456810029ab1e09cbce4b9c011fa16d26b71dc58bb4ec875984526e342d509c\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/calcular",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"calcular"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calcular multiplicacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operacion\":\"multiplicacion\",\n    \"token\":\"6456810029ab1e09cbce4b9c011fa16d26b71dc58bb4ec875984526e342d509c\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/calcular",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"calcular"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calcular division",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operacion\":\"division\",\n    \"token\":\"82a46fb46bd65cae8cf33dc74dff9ea5abe06d5e8177039b79e4590039fac17b\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/calcular",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"calcular"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calcular potencia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operacion\":\"potenciacion\",\n    \"token\":\"3adc9ca32289aa30614d048e0e2c519e6a339f3f83e695123eefa41360b17f54\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calculadora/calcular",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calculadora",
+						"calcular"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
