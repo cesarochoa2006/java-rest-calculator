@@ -12,7 +12,9 @@ public enum EnumError {
             " por favor verificalo e intenta nuevamente"),
     INVALID_OPERATION("La operación enviada no es válida o no está soportada," +
             " por favor verifica e intenta nuevamente o contacta con el administrador del sistema"),
-    ABSENT_OPERANDS("Debes agregar al menos un operando primero")
+    ABSENT_OPERANDS("Debes agregar al menos un operando primero"),
+    INVALID_OPERANDS("Los operandos enviados no son números o tienen un formato incorrecto, " +
+            "por favor verifica e intenta nuevamente")
 
         ;
 

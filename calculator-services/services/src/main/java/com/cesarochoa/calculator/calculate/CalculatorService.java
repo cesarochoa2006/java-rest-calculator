@@ -52,10 +52,13 @@ public class CalculatorService {
         );
         if(session.getOperands() == null || session.getOperands().isBlank())
             throw new BusinessException(EnumError.ABSENT_OPERANDS);
-        return operators.parallelStream()
+        var result = operators.parallelStream()
                 .filter(operator -> operator.getName().equals(operation.toLowerCase(Locale.ROOT)))
                 .findFirst().orElseThrow(() -> new BusinessException(EnumError.INVALID_OPERATION))
-                .compute(session.getOperands().split(";"));
+                .doOperate(session.getOperands().split(";"));
+        session.setOperands(String.valueOf(result));
+        sessionRepository.save(session);
+        return result;
     }
 
 

@@ -1,2 +1,18 @@
 server:
   port: 8888
+  error:
+    include-message: always
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: "org.h2.Driver"
+    username: sa
+    password: password
+  jpa:
+    show-sql: true
+    generate-ddl: true
+  h2:
+    console.enabled: true
