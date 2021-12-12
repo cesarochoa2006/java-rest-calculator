@@ -1,27 +1,21 @@
-package com.cesarochoa.calculator.main;
+package com.cesarochoa.rest.calculator;
 
+import com.cesarochoa.calculator.JavaRestCalculatorApplication;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@SpringBootTest
+@SpringBootTest(classes = {JavaRestCalculatorApplication.class})
 class ApplicationTest {
-
-    private final Logger logger = LoggerFactory.getLogger(ApplicationTest.class);
 
     @Autowired
     ApplicationContext context;
 
     @Test
-    void contextLoadTest(){
-        logger.info("Testing application context");
+    void contextTest(){
         assertNotNull(context);
     }
-
-
-
 }
