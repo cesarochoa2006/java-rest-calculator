@@ -45,7 +45,7 @@ public class AddOperandCommand extends CalculatorCommand {
     private void contextValidation() {
         if (this.getContext() == null || this.getContext().isBlank())
             throw new BusinessException(EnumError.ABSENT_OPERANDS);
-        if (!this.getContext().matches("^([+-]?(\\d*\\.)?\\d+;?)+$"))
+        if (!this.getContext().matches("^([+-]?(\\d+\\.)?\\d+;?)$"))
             throw new BusinessException(EnumError.INVALID_OPERANDS);
     }
 }
