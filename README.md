@@ -68,7 +68,7 @@ El proyecto cuenta con testing unitario mediante JUnit, Mockito y Spring tests. 
 
 ### Trade offs
 
-- Este proyecto se construyó sobre una base de datos H2 'in memory' por simplicidad del mismo. Puede reemplazarse con una base de datos relacional robusta ya que un orm implementa JPA. También se puede implementar sobre una base de datos no relacional si se requiere una mayor velocidad de ejecución ya que al menos en versiones iniciales no hay complejidad alguna en la capa de persistencia, y se utiliza solo para gestionar los tokens generados por los usuarios.
+- Este proyecto se construyó sobre una base de datos H2 'in memory' por simplicidad del mismo. Puede reemplazarse con una base de datos relacional robusta ya que se construyó sobre un orm e implementa JPA. También se puede implementar sobre una base de datos no relacional si se requiere una mayor velocidad de ejecución ya que al menos en versiones iniciales no hay complejidad alguna en la capa de persistencia, y se utiliza solo para gestionar los tokens generados por los usuarios.
 - Los números operables están limitados por la capacidad de los primitivos de java **double** por simplicidad y velocidad de desarrollo del mvp, pero por la misma razón se pueden generar errores de presición y errores de desbordamiento.  Si se desea escalar esta funcionalidad una buena opción es cambiar las operaciones para utilizar BigDecimal.
 - Aunque modular, este proyecto es *monolítico*!.  Un monolito es ideal en proyectos pequeños como este, pero a mediana escala pueden surgir problemas abiertamente conocidos. Si se piensa en escalabilidad a mediano nivel, lo mejor sería optimizarlo mediante **microservicios**. 
 
