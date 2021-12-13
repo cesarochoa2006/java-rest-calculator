@@ -1,7 +1,9 @@
-package com.cesarochoa.rest.calculator;
+package com.cesarochoa.calculator.services;
 
-import com.cesarochoa.calculator.JavaRestCalculatorApplication;
+import com.cesarochoa.calculator.TestApplication;
 import com.cesarochoa.calculator.calculate.CalculatorService;
+import com.cesarochoa.calculator.calculate.operators.Operator;
+import com.cesarochoa.calculator.calculate.operators.strategies.*;
 import com.cesarochoa.calculator.domain.entities.SessionEntity;
 import com.cesarochoa.calculator.domain.repositories.SessionRepository;
 import com.cesarochoa.calculator.errormanagers.BusinessException;
@@ -17,12 +19,12 @@ import org.springframework.context.ApplicationContext;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {JavaRestCalculatorApplication.class})
-class CalculatorServiceTest {
-    private final Logger logger = LoggerFactory.getLogger(CalculatorServiceTest.class);
+
+@SpringBootTest(classes = {TestApplication.class})
+class CalculatorServicesTest {
+    private final Logger logger = LoggerFactory.getLogger(CalculatorServicesTest.class);
 
     @Mock
     SessionRepository sessionRepo;
@@ -36,6 +38,25 @@ class CalculatorServiceTest {
     @BeforeEach
     void init() {
         service = new CalculatorService(context, sessionRepo);
+    }
+
+    @Test
+    void initOperators() {
+        var sum = context.getBean(Sum.class);
+        var subtract = context.getBean(Subtract.class);
+        var multiply = context.getBean(Multiply.class);
+        var divide = context.getBean(Divide.class);
+        var pow = context.getBean(Pow.class);
+        assertNotNull(sum);
+        assertInstanceOf(Operator.class, sum);
+        assertNotNull(subtract);
+        assertInstanceOf(Operator.class, subtract);
+        assertNotNull(multiply);
+        assertInstanceOf(Operator.class, multiply);
+        assertNotNull(divide);
+        assertInstanceOf(Operator.class, divide);
+        assertNotNull(pow);
+        assertInstanceOf(Operator.class, pow);
     }
 
 
